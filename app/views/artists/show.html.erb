@@ -1,0 +1,19 @@
+<h2><%= @artist.name %></h2><hr>
+
+# Need to put the image here!!
+
+<p>Gender: <%= @artist.gender %></p>
+<p>Date of Birth: <%= @artist.birth_day %></p>
+<p>Date of Death: <%= @artist.death_day %></p>
+<p>Hometown: <%= @artist.hometown %></p>
+<p>Location: <%= @artist.location %></p>
+<p>Nationality: <%= @artist.nationality %></p>
+<h4>Biography</h4>
+<p><%= @artist.biography %></p>
+
+<h4>Artworks</h4>
+# Need to check this!
+<p><%= link_to @artist.artwork.name, @artist.artwork %></p><hr>
+
+
+<%= link_to 'All Artists', artists_path %><hr>
