@@ -1,9 +1,6 @@
 class ListsController < ApplicationController
   before_action :user
 
-  http_basic_authenticate_with name: "user", password: "secret", except: [:index, :show]
-
-
   def index
      @lists = List.all
   end
