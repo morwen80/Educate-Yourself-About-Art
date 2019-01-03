@@ -14,6 +14,7 @@ include ArtistHelper
 api = search_for_artists
 @artists = [
 
+  leonardo_da_vinci = api.artist(id: 'leonardo-da-vinci'),
   pablo_picasso = api.artist(id: 'pablo-picasso'),
   andy_warhol = api.artist(id: 'andy-warhol'),
   banksy = api.artist(id: 'banksy'),
@@ -115,3 +116,19 @@ api = search_for_artists
   yves_klein = api.artist(id: 'yves-klein'),
   diane_arbus = api.artist(id: 'diane-arbus'),
 ]
+
+@artists.each do |artist|
+  p "."
+  Artist.create!(
+    slug: artist.slug,
+    name: artist.name,
+    gender: artist.gender,
+    biography: artist.biography,
+    birth_day: artist.birthday,
+    death_day: artist.deathday,
+    hometown: artist.hometown,
+    location: artist.location,
+    nationality: artist.nationality,
+    image: artist.thumbnail
+  )
+end
